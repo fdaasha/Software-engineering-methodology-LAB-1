@@ -120,7 +120,7 @@ class testcase_data:
                         break
 
                 if city_complete:
-                    c.complete = 1
+                    c.complete = city_complete
                 if not c.complete and country_complete:
                     country_complete = False
             if country_complete:
