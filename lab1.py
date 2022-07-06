@@ -107,24 +107,23 @@ class testcase_data:
 
         if self.world is None:
             return True
-        tc_complete = True
         
         for country in self.countries:
             country_complete = True
             for cc in country.city_coordinates:
                 c = self.world[cc.x][cc.y]
                 city_complete = True
-                c.complete = True
                 for _, val in c.coins.items():
                     if not val:
                         city_complete = False
                         break
-                if not c.complete and country_complete:
+                c.complete = city_complete
+                if c.complete = False and country_complete:
                     country_complete = False
             if country_complete:
                 if not country.complete:
                     country.complete = self.iteration_count
-            elif tc_complete:
+            else
                 tc_complete = False
 
         if tc_complete:
