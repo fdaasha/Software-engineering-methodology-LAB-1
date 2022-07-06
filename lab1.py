@@ -114,13 +114,11 @@ class testcase_data:
             for cc in country.city_coordinates:
                 c = self.world[cc.x][cc.y]
                 city_complete = True
+                c.complete = True
                 for _, val in c.coins.items():
                     if not val:
                         city_complete = False
                         break
-
-                if city_complete:
-                    c.complete = city_complete
                 if not c.complete and country_complete:
                     country_complete = False
             if country_complete:
